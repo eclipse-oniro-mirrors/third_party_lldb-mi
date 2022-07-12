@@ -6,9 +6,13 @@
 
 lldb-mi使用CMake构建。lldb-mi所需的唯一依赖项是C++14编译器和lldb本身（包括其依赖项：Clang和LLVM）。这些依赖项的安装方式应确保可以通过CMake的[find_package](https://cmake.org/cmake/help/latest/command/find_package.html)找到它们的功能。您需要LLDB/Clang/LLVM头及其编译的库才能使构建工作，但不需要相应的源文件。
 
+
 # 基于系统LLDB的构建
 
-如果您的发行版或操作系统已经提供了正确配置的LLDB/Clang/LLVM安装，则只需运行以下命令即可构建LLDB-mi：
+在OpenHarmony中，该仓库被LLVM工具链构建流程依赖，用于提供lldb的mi接口能力，详见
+https://gitee.com/openharmony-sig/third_party_llvm-project/blob/master/llvm-build/README.md  
+
+如果您想基于社区标准流程构建，并且发行版或操作系统已经提供了正确配置的LLDB/Clang/LLVM安装，则只需运行以下命令即可构建LLDB-mi：
 
 ```sh
 cmake . ; cmake --build .
